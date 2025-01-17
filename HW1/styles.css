@@ -105,28 +105,30 @@ body {
     background-color: rgba(166, 161, 177, 0.5);
 }
 
+
 @media (max-width: 865px) {
+    .hero {
+        min-height: 730px;
+    }
     .hero .title {
-        font-size: 1.25em;
-        padding: 1.5em;
+        font-size: 20pt;
     }
 }
 
 @media (max-width: 585px) {
     .hero {
         min-height: 500px;
-        padding: 1em;
     }
     .hero .title {
-        font-size: 1em;
-        padding: 1em;
+        font-size: 16pt;
+        margin: 0;
+        margin-top: 50px;
     }
 }
 
 @media (max-width: 445px) {
     .hero .title {
-        font-size: 0.9em;
-        padding: 0.8em;
+        font-size: 14pt;
     }
 }
 
