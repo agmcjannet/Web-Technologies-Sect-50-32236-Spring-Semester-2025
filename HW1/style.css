@@ -1,3 +1,172 @@
+   body {
+    padding: 0;
+    margin: 0;
+    background-image: url("imgs/20230810_095411.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 400;
+}
+
+/* Descriptions & Parallax Effect*/
+.description-container {
+    min-height: 50vh;
+    font-size: 40pt;
+}
+
+.description {
+    margin: 25vh auto;
+    padding: 10pt;
+    text-align: center;
+    width: 75%;
+    min-width: 300px;
+    background-color: rgba(109, 35, 35, 0.447);
+
+}
+
+@media (max-width: 865px) {
+    .description-container {
+        font-size: 1.75em;
+    }
+}
+
+/* Hero Image */
+.hero {
+    height: 100vh;
+    min-height: 740px;
+    background-image: url("imgs/20230810_095411.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .8);
+}
+
+.hero .title {
+    font-size: 30pt;
+    color: #fff;
+    float: left;
+    margin-top: 170px;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 2em;
+    text-align: center;
+    background-color: rgba(109, 35, 35, 0.647);
+}
+
+.title h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+}
+
+.title h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 0.25em;
+}
+
+.hero .nav {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 2em;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero .nav a {
+    flex-grow: 1;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero .nav-item {
+    font-size: 0.25em;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    border-width: 1px 0;
+}
+
+.hero .nav-item:hover {
+    color: #fff;
+    background-color: rgba(166, 161, 177, 0.5);
+}
+
+
+@media (max-width: 865px) {
+    .hero {
+        min-height: 730px;
+    }
+    .hero .title {
+        font-size: 20pt;
+    }
+}
+
+@media (max-width: 585px) {
+    .hero {
+        min-height: 500px;
+    }
+    .hero .title {
+        font-size: 16pt;
+        margin: 0;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 445px) {
+    .hero .title {
+        font-size: 14pt;
+    }
+}
+
+/* Menu */
+.menu {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 1em;
+    background-color: rgb(64, 10, 10);
+    color: #fff;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 300;
+    font-size: 1.25em;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.54);
+}
+
+.menu h1 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.menu .menu-group-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+.menu .menu-group {
+    padding: 1em;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.menu .menu-head {
+    font-style: italic;
+    font-size: 2em;
+    padding: 1em;
+}
+
+.menu .menu-item {
+    text-align: left;
+    font-style: normal;
+}
+
 /* Font styles */
 .fjalla-one-regular {
     font-family: "Fjalla One", serif;
@@ -24,4 +193,4 @@
   :root {
     --font-fjalla-one: 'Fjalla One', sans-serif;
     --font-libre-baskerville: 'Libre Baskerville', serif;
-}    
+} 
