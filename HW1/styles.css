@@ -12,8 +12,6 @@ body {
     
 }
 
-
-/* Descriptions, Image Container & Parallax Effect*/
 .bio-image-container {
     width: 100%;
     display: flex;
@@ -47,7 +45,6 @@ body {
     }
 }
 
-/* Hero Image */
 .hero {
     height: auto;
     min-height: 100vh;
@@ -64,7 +61,7 @@ body {
     box-shadow: 0 -4px 10px rgb(0, 0, 0);
 }
 
-/* Text Box (Title) */
+
 .hero .title {
     font-size: 1.5em;
     color: #fff;
@@ -122,7 +119,6 @@ body {
     background-color: rgba(166, 161, 177, 0.5);
 }
 
-/* Menu */
 .menu {
     box-sizing: border-box;
     min-height: 100vh;
@@ -176,7 +172,6 @@ div.scroll-container {
     max-height: 200px;
   }
 
-/* Font styles */
 .fjalla-one-regular {
     font-family: "Fjalla One", serif;
     font-weight: 400;
@@ -204,7 +199,6 @@ div.scroll-container {
     --font-libre-baskerville: 'Libre Baskerville', serif;
 } 
 
-/* Responsive Adjustments */
 @media (max-width: 865px) {
     .hero .title {
         font-size: 1em;
