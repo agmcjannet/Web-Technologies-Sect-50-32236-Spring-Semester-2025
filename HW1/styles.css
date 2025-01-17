@@ -1,34 +1,36 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url("imgs/20230810_095411.jpg");
+    background-image: url("imgs/Glacier_Painting.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
+    color:#fff
+    
 }
 
 /* Descriptions & Parallax Effect*/
 .description-container {
     min-height: 50vh;
-    font-size: 20pt;
+    font-size: 14pt;
 }
 
 .description {
-    margin: 25vh auto;
-    padding: 10pt;
+    margin: 15vh auto;
+    padding:30pt;
     text-align: center;
-    width: 75%;
-    min-width: 300px;
-    background-color: rgba(109, 35, 35, 0.447);
+    width: 60%;
+    min-width: 250px;
+    background-color: rgb(174, 110, 65, 0.88)
 
 }
 
 @media (max-width: 865px) {
     .description-container {
-        font-size: 1.75em;
+        font-size: 1em;
     }
 }
 
@@ -36,7 +38,7 @@ body {
 .hero {
     height: auto;
     min-height: 100vh;
-    background-image: url("imgs/20230810_095411.jpg");
+    background-image: url("imgs/Glacier_Painting.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -105,40 +107,12 @@ body {
     background-color: rgba(166, 161, 177, 0.5);
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 865px) {
-    .hero .title {
-        font-size: 1.25em;
-        padding: 1.5em;
-    }
-}
-
-@media (max-width: 585px) {
-    .hero {
-        min-height: 500px;
-        padding: 1em;
-    }
-    .hero .title {
-        font-size: 1em;
-        padding: 1em;
-    }
-}
-
-@media (max-width: 445px) {
-    .hero .title {
-        font-size: 0.9em;
-        padding: 0.8em;
-    }
-}
-
-
 /* Menu */
 .menu {
     box-sizing: border-box;
     min-height: 100vh;
     padding: 1em;
-    background-color: rgb(64, 10, 10);
+    background-color: rgb(174, 110, 65);
     color: #fff;
     font-family: 'Libre Baskerville', serif;
     font-weight: 300;
@@ -201,3 +175,36 @@ body {
     --font-fjalla-one: 'Fjalla One', sans-serif;
     --font-libre-baskerville: 'Libre Baskerville', serif;
 } 
+
+/* Responsive Adjustments */
+@media (max-width: 865px) {
+    .hero .title {
+        font-size: 1em;
+        padding: 1.5em;
+    }
+}
+
+@media (max-width: 585px) {
+    .hero {
+        min-height: 500px;
+        padding: 1em;
+    }
+    .hero .title {
+        font-size: 1em;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 445px) {
+    .hero .title {
+        font-size: 0.9em;
+        padding: 0.8em;
+    }
+}
+.websiteframe {
+    border: 10px solid #ED8B00;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    background-color: #fff;
+  }
