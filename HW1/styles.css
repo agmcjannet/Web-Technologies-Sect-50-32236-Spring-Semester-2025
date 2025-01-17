@@ -13,7 +13,7 @@ body {
 /* Descriptions & Parallax Effect*/
 .description-container {
     min-height: 50vh;
-    font-size: 40pt;
+    font-size: 20pt;
 }
 
 .description {
@@ -165,7 +165,7 @@ body {
 
 .menu .menu-head {
     font-style: italic;
-    font-size: 2em;
+    font-size: 1em;
     padding: 1em;
 }
 
