@@ -34,38 +34,44 @@ body {
 
 /* Hero Image */
 .hero {
-    height: 100vh;
-    min-height: 740px;
+    height: auto;
+    min-height: 100vh;
     background-image: url("imgs/20230810_095411.jpg");
-    background-position: left;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2em;
 }
 
+/* Text Box (Title) */
 .hero .title {
-    font-size: 30pt;
+    font-size: 1.5em;
     color: #fff;
-    float: left;
-    margin-top: 170px;
-    margin-left: 1em;
-    margin-right: 1em;
+    max-width: 90%;
+    margin: 0 auto;
     padding: 2em;
     text-align: center;
     background-color: rgba(109, 35, 35, 0.647);
+    box-sizing: border-box;
 }
+
 
 .title h1 {
     font-family: 'Fjalla One', sans-serif;
     font-size: 2em;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.1em;
 }
 
 .title h2 {
     font-family: 'Libre Baskerville', serif;
     font-weight: 300;
     font-style: italic;
-    line-height: 0.25em;
+    line-height: 0.5em;
 }
 
 .hero .nav {
@@ -99,32 +105,31 @@ body {
     background-color: rgba(166, 161, 177, 0.5);
 }
 
-
 @media (max-width: 865px) {
-    .hero {
-        min-height: 730px;
-    }
     .hero .title {
-        font-size: 20pt;
+        font-size: 1.25em;
+        padding: 1.5em;
     }
 }
 
 @media (max-width: 585px) {
     .hero {
         min-height: 500px;
+        padding: 1em;
     }
     .hero .title {
-        font-size: 16pt;
-        margin: 0;
-        margin-top: 50px;
+        font-size: 1em;
+        padding: 1em;
     }
 }
 
 @media (max-width: 445px) {
     .hero .title {
-        font-size: 14pt;
+        font-size: 0.9em;
+        padding: 0.8em;
     }
 }
+
 
 /* Menu */
 .menu {
