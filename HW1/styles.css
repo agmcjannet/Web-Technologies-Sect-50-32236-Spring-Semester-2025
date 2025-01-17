@@ -210,3 +210,31 @@ body {
     overflow: hidden;
     background-color: #fff;
   }
+  /*Quick Bio Hover Image*/
+  .hover-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(174, 110, 65, 0.88);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;
+}
+
+.hover-container:hover .hover-text {
+    opacity: 1;
+}
