@@ -50,11 +50,11 @@ body {
 
 /* Text Box (Title) */
 .hero .title {
-    font-size: 1.5em;
+    font-size: 2em;
     color: #fff;
     max-width: 90%;
     margin: 0 auto;
-    padding: 2em;
+    padding: 3em;
     text-align: center;
     background-color: rgba(109, 35, 35, 0.647);
     box-sizing: border-box;
@@ -63,7 +63,7 @@ body {
 
 .title h1 {
     font-family: 'Fjalla One', sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     letter-spacing: 0.1em;
 }
 
@@ -72,6 +72,8 @@ body {
     font-weight: 300;
     font-style: italic;
     line-height: 0.5em;
+    font-size: 2rem;
+    margin: 0.5em 0;
 }
 
 .hero .nav {
@@ -79,8 +81,8 @@ body {
     font-style: italic;
     font-weight: 300;
     color: #fff;
-    margin-top: 2em;
-    font-size: 1.5em;
+    margin-top: 3em;
+    font-size: 1.75em;
     display: flex;
     flex-direction: row;
 }
@@ -92,12 +94,12 @@ body {
 }
 
 .hero .nav-item {
-    font-size: 0.25em;
-    padding: 0.5em 1em;
+    font-size: 1rem;
+    padding: 1em 1.5em;
     margin: 0 0.5em;
     text-align: center;
     border: 1px solid #d9d9d9;
-    border-width: 1px 0;
+    border-width: 2px 0;
 }
 
 .hero .nav-item:hover {
@@ -109,26 +111,52 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 865px) {
     .hero .title {
-        font-size: 1.25em;
-        padding: 1.5em;
+        font-size: 1.75rem;
+        padding: 2em;
+    }
+    .title h1 {
+        font-size: 2.5rem;
+    }
+    .title h2 {
+        font-size: 1.75rem;
+    }
+    .hero .nav {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 585px) {
     .hero {
-        min-height: 500px;
         padding: 1em;
     }
     .hero .title {
-        font-size: 1em;
-        padding: 1em;
+        font-size: 1.5rem;
+        padding: 1.5em;
+    }
+    .title h1 {
+        font-size: 2rem;
+    }
+    .title h2 {
+        font-size: 1.5rem;
+    }
+    .hero .nav {
+        font-size: 1.25rem;
     }
 }
 
 @media (max-width: 445px) {
     .hero .title {
-        font-size: 0.9em;
-        padding: 0.8em;
+        font-size: 1.25rem;
+        padding: 1em;
+    }
+    .title h1 {
+        font-size: 1.75rem;
+    }
+    .title h2 {
+        font-size: 1.25rem;
+    }
+    .hero .nav {
+        font-size: 1rem;
     }
 }
 
