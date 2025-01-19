@@ -1,0 +1,15 @@
+#** Week 2 Readme Response - Allison McJannet **
+
+I started this assignment by working through the Codecademy tutorial and using examples from the reading to create the homework file on my own. I felt like I was fully capable of doing the homework without any extra help based on the comprehensive reading. Honestly, the hardest part of doing this without ChatGPT was just coming up with ideas for my "favorites" list. I don’t really “surf the web” much, so figuring out things like my favorite websites was tricky. 
+
+When I got to the question-and-answer part of the assignment, I didn’t totally understand the example in the reading. I tried searching Google for ideas, but I eventually turned to ChatGPT to help me figure it out. ChatGPT explained how to structure that part of the code, and it really helped me understand how it works. After that, I felt like I could confidently explain the code and would be able to write something similar on my own if needed. 
+
+ChatGPT also suggested adding an image to my HTML, which I had forgotten was mentioned in the instructions. While this wasn’t necessary, it was a good reminder to think about ways to make the project more creative. I found that using ChatGPT as a second set of eyes to review my code was more helpful than just having it write the code for me. That process gave me a better understanding of what I was doing, rather than skipping ahead to the final result. Still, this was a fairly simple assignment, so I imagine ChatGPT might feel more helpful if the task had been harder or more complex. 
+
+If I had only used the output from ChatGPT, I don’t think I would feel like the work was mine. Like the overview video mentioned this week, AI really struggles with personalization, and I noticed that while using ChatGPT. For example, it couldn’t generate a favorites list that reflected my actual preferences, because it doesn’t know enough about me. To make it more personal, I would have had to spend a lot of time explaining my interests, which would’ve been more work than just doing it myself. 
+
+Another thing I noticed is that ChatGPT often goes above and beyond the assignment requirements. For example, it added extra features like explanatory text in the HTML or additional logs in the JavaScript that weren’t needed. While this was interesting to see and gave me ideas, it wasn’t necessary for completing the assignment. 
+
+That said, I do think ChatGPT is helpful for clarifying concepts and offering suggestions. For example, it helped me write the question-and-answer section, and I feel like I could adequately explain how that part of the code works now. However, I also think that if I had skipped the process of writing the code myself and just used ChatGPT’s output, I wouldn’t feel as confident in my understanding or my ability to recreate the work independently. 
+
+In the end, I think ChatGPT works best as a tool for support, not a replacement for doing the work. Writing the code myself gave me the practice and understanding I needed, and it made the final product feel like my own. 
