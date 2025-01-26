@@ -8,20 +8,24 @@ body {
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; 
+    min-height: 100vh; 
     background-color: #efe8d4;
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
 .section.title {
     text-align: center;
     color: #70002e;
+    width: 100%;
 }
 
 .section.title h1 {
     font-family: 'Fjalla One', sans-serif;
     font-size: 75px;
     margin: 0;
+    word-wrap: break-word; 
 }
 
 .container {
@@ -29,20 +33,41 @@ main {
     padding: 40px;
     border-radius: 30px;
     max-width: 2000px;
+    width: 100%;
     margin: 20px auto 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+
+.image-container {
+    flex-shrink: 0; 
+    width: 50%; 
+    height: auto;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; 
 }
 
 .image-container img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    object-fit: contain; 
+}
+
+.content-container {
+    width: 50%;
+    text-align: left; 
 }
 
 p {
     font-size: 1.75vw;
     line-height: 1.6;
     margin-top: 20px;
+    margin-right: 20px;
 }
 
 button {
@@ -61,15 +86,26 @@ button:hover {
     background-color: #ED8B00;
 }
 
-
 @media (max-width: 768px) {
     .section.title h1 {
         font-size: 10vw;
     }
 
     .container {
-        max-width: 90%; 
+        max-width: 90%;
         padding: 15px;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .image-container {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        width: 100%; 
+    }
+
+    .content-container {
+        width: 100%; 
     }
 
     p {
