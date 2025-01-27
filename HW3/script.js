@@ -25,13 +25,14 @@ function makeChoice(location) {
 
     // Use an if statement to determine what happens next
     if (froggyLocation === "flowerMeadow") {
-        document.getElementById("story-text").innerHTML = `
-            <p>Froggy hops into a colorful meadow buzzing with bees and fluttering butterflies. 
-            They spot a huge, glowing flower in the center.</p>
-            <button onclick="makeChoice('climbFlower')">Climb onto the glowing flower</button>
-            <button onclick="makeChoice('befriendButterflies')">Befriend the butterflies</button>
-            <button onclick="makeChoice('gatherNectar')">Gather nectar from the smaller flowers</button>
-        `;
+        let storyContent = "<p>Froggy hops into a colorful meadow buzzing with bees and fluttering butterflies. ";
+        storyContent += "They spot a huge, glowing flower in the center.</p>";
+        storyContent += "<button onclick='makeChoice(\"climbFlower\")'>Climb onto the glowing flower</button>";
+        storyContent += "<button onclick='makeChoice(\"befriendButterflies\")'>Befriend the butterflies</button>";
+        storyContent += "<button onclick='makeChoice(\"gatherNectar\")'>Gather nectar from the smaller flowers</button>";
+        
+        document.getElementById("story-text").innerHTML = storyContent;
+        
         updateImage("imgs/flowerMeadow.png");
 
     } else if (froggyLocation === "pond") {
@@ -110,7 +111,7 @@ function makeChoice(location) {
             <p>The flower-scented path leads to the flower meadow, where Froggy sees the
             rare glowing blossom.</p>`;
         updateImage("imgs/flowerMeadow.png");
-        makeChoice("flowerMeadow"); // Go back to flower meadow choices
+        makeChoice("flowerMeadow"); 
 
     } else if (froggyLocation === "followMusic") {
         document.getElementById("story-text").innerHTML = `
