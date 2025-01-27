@@ -103,7 +103,7 @@ function makeChoice(location) {
         document.getElementById("story-text").innerHTML = `
             <p>The glittering pebbles lead to a hidden pond filled with golden lily pads. 
             Froggy relaxes and makes new frog friends, ending the day with a fun lily pad party.</p>`;
-        updateImage("Hw3/imgs/goldenLilyPads.png");
+        updateImage("HW3/imgs/goldenLilyPads.png");
         offerRestart();
 
     } else if (froggyLocation === "followFlowers") {
