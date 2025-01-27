@@ -43,7 +43,7 @@ function makeChoice(location) {
             <button onclick="makeChoice('joinLilyPadGame')">Join their lily pad game</button>
             <button onclick="makeChoice('diveInPond')">Dive under the water to find hidden secrets</button>
         `;
-        updateImage("imgs/shimmeringPond.png");
+        updateImage("HW3/imgs/shimmeringPond.png");
 
     } else if (froggyLocation === "cave") {
         document.getElementById("story-text").innerHTML = `
