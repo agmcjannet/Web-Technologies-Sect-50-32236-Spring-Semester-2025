@@ -16,7 +16,7 @@ function resetStory() {
         <button onclick="makeChoice('cave')">Explore the mossy cave</button>
     `;
     document.getElementById("choices").innerHTML = "";
-    updateImage("HW3/imgs/titleScreen.png"); // Starting image
+    updateImage("imgs/titleScreen.png"); // Starting image
 }
 
 // Main function to handle choices
@@ -33,7 +33,7 @@ function makeChoice(location) {
         
         document.getElementById("story-text").innerHTML = storyContent;
         
-        updateImage("HW3/imgs/flowerMeadow.png");
+        updateImage("imgs/flowerMeadow.png");
 
     } else if (froggyLocation === "pond") {
         document.getElementById("story-text").innerHTML = `
@@ -43,7 +43,7 @@ function makeChoice(location) {
             <button onclick="makeChoice('joinLilyPadGame')">Join their lily pad game</button>
             <button onclick="makeChoice('diveInPond')">Dive under the water to find hidden secrets</button>
         `;
-        updateImage("HW3/imgs/shimmeringPond.png");
+        updateImage("imgs/shimmeringPond.png");
 
     } else if (froggyLocation === "cave") {
         document.getElementById("story-text").innerHTML = `
@@ -53,26 +53,26 @@ function makeChoice(location) {
             <button onclick="makeChoice('followFlowers')">Take the path that smells of flowers</button>
             <button onclick="makeChoice('followMusic')">Choose the path where soft music seems to echo</button>
         `;
-        updateImage("HW3/imgs/mossyCave.png");
+        updateImage("imgs/mossyCave.png");
 
     } else if (froggyLocation === "climbFlower") {
         document.getElementById("story-text").innerHTML = `
             <p>The flower is enchanted! A hidden path opens up that leads to the mossy cave.</p>
             <button onclick="makeChoice('cave')">Follow the path to the mossy cave</button>
         `;
-        updateImage("HW3/imgs/enchantedFlower.png");
+        updateImage("imgs/enchantedFlower.png");
 
     } else if (froggyLocation === "befriendButterflies") {
         document.getElementById("story-text").innerHTML = `
             <p>The butterflies flutter and tell Froggy about some critters playing a game that may be hiding something.</p>
             <button onclick="makeChoice('pond')">Search for the critters by the pond</button>
         `;
-        updateImage("HW3/imgs/butterflies.png");
+        updateImage("imgs/butterflies.png");
 
     } else if (froggyLocation === "gatherNectar") {
         document.getElementById("story-text").innerHTML = `
             <p>Froggy gathers nectar and happily hums a tune. The adventure ends peacefully with Froggy returning to the swamp, enjoying a delicious nectar treat.</p>`;
-        updateImage("HW3/imgs/nectarGathering.png");
+        updateImage("imgs/nectarGathering.png");
         offerRestart();
     }
 
@@ -81,20 +81,20 @@ function makeChoice(location) {
         document.getElementById("story-text").innerHTML = `
             <p>Tommy and Quill reveal they've found a map to a hidden treasure in the mossy cave.</p>
             <button onclick="makeChoice('cave')">Head to the cave to use the map</button>`;
-        updateImage("HW3/imgs/treasureMap.png");
+        updateImage("imgs/treasureMap.png");
 
     } else if (froggyLocation === "joinLilyPadGame") {
         document.getElementById("story-text").innerHTML = `
             <p>Froggy wins the game, and Tommy and Quill reward them with a sparkling 
             pebble that lights the way to the flower meadow.</p>
             <button onclick="makeChoice('flowerMeadow')">Follow the lights to the flower meadow</button>`;
-        updateImage("HW3/imgs/lilyPadGame.png");
+        updateImage("imgs/lilyPadGame.png");
 
     } else if (froggyLocation === "diveInPond") {
         document.getElementById("story-text").innerHTML = `
             <p>Froggy dives under the water and finds shiny shells, 
             ending their day happily decorating their lily pad at home.</p>`;
-        updateImage("HW3/imgs/divingInPond.png");
+        updateImage("imgs/divingInPond.png");
         offerRestart();
     }
 
@@ -103,21 +103,21 @@ function makeChoice(location) {
         document.getElementById("story-text").innerHTML = `
             <p>The glittering pebbles lead to a hidden pond filled with golden lily pads. 
             Froggy relaxes and makes new frog friends, ending the day with a fun lily pad party.</p>`;
-        updateImage("HW3/imgs/goldenLilyPads.png");
+        updateImage("imgs/goldenLilyPads.png");
         offerRestart();
 
     } else if (froggyLocation === "followFlowers") {
         document.getElementById("story-text").innerHTML = `
             <p>The flower-scented path leads to the flower meadow, where Froggy sees the
             rare glowing blossom.</p>`;
-        updateImage("HW3/imgs/flowerMeadow.png");
+        updateImage("imgs/flowerMeadow.png");
         makeChoice("flowerMeadow"); 
 
     } else if (froggyLocation === "followMusic") {
         document.getElementById("story-text").innerHTML = `
             <p>The musical path leads Froggy to a family of singing raccoons who invite 
             them to perform with them. Froggy's happy ribbit becomes the star of the show.</p>`;
-        updateImage("HW3/imgs/singingRaccoons.png");
+        updateImage("imgs/singingRaccoons.png");
         offerRestart();
     }
 }
