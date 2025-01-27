@@ -16,7 +16,7 @@ function resetStory() {
         <button onclick="makeChoice('cave')">Explore the mossy cave</button>
     `;
     document.getElementById("choices").innerHTML = "";
-    updateImage("HW3/imgs/titleScreen.png"); // Starting image
+    updateImage("imgs/titleScreen.png"); // Starting image
 }
 
 // Main function to handle choices
