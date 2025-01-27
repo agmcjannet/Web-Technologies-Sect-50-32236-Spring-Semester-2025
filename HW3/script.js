@@ -37,7 +37,7 @@ function makeChoice(location) {
 
     } else if (froggyLocation === "pond") {
         document.getElementById("story-text").innerHTML = `
-            <p>At the pond, Froggy meets Snippy the turtle and Quill the porcupine. 
+            <p>At the pond, Froggy meets Tommy the turtle and Quill the porcupine. 
             They're playing a game leaping between lily pads but seem to be hiding something behind their backs.</p>
             <button onclick="makeChoice('askWhatTheyreHiding')">Ask Tommy and Quill what they're hiding</button>
             <button onclick="makeChoice('joinLilyPadGame')">Join their lily pad game</button>
