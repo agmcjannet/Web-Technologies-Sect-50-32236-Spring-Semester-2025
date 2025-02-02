@@ -17,21 +17,24 @@
       <div class="container">
         
         <div class="image-container">
-            <img src="HW3/imgs/titleScreen.png" alt="Frog Laying by Pond" title="Title Screen" class="image"/>
+            <img src="imgs/titleScreen.png" alt="Frog Laying by Pond" title="Title Screen" class="image"/>
         </div>
 
         <div id="story-text">
-          <p>Froggy, a cute little green frog, wakes up to a beautiful morning in the swamp. 
-            The sun is warm and toasty, the lily pads are glowing, and the soft breeze tickles the cattails. 
-            Froggy feels today is a perfect day for an adventure. 
-            Where should they hop off to first?</p>
+          <p>Froggy, a cheerful little green frog, wakes up to a sparkling morning in the swamp. 
+            The sun is warm, the lily pads are glowing, and the soft breeze tickles the cattails. 
+            Froggy feels today is a perfect day for an adventure. But where should they hop off to 
+            first? </p>
+
+          <p> Should Froggy hop to the flower meadow, visit the shimmering pond, or explore 
+            the mossy cave?</p>
         </div>
         
-        <div id="choices">
-          <button onclick="goToFlowerMeadow()">Hop to the flower meadow</button>
-          <button onclick="goToPond()">Visit the shimmering pond</button>
-          <button onclick="goToCave()">Explore the mossy cave</button>
-        </div>
+      
+      <input type="text" id="user-choice" placeholder="Type your choice here...">
+      <button onclick="makeChoiceFromInput()">Submit</button>
+      
+      
       </div>
     </div>
   </main>

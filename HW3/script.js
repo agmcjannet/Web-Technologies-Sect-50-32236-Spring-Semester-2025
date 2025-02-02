@@ -10,7 +10,9 @@ function updateImage(imagePath) {
 function resetStory() {
     froggyLocation = "swamp"; // Reset Froggy's location
     document.getElementById("story-text").innerHTML = `
-        <p>Froggy, a cheerful little green frog, wakes up to a sparkling morning in the swamp. The sun is warm, the lily pads are glowing, and the soft breeze tickles the cattails. Froggy feels today is a perfect day for an adventure. But where should they hop off to first?</p>
+        <p>Froggy, a cheerful little green frog, wakes up to a sparkling morning in the swamp. 
+        The sun is warm, the lily pads are glowing, and the soft breeze tickles the cattails. 
+        Froggy feels today is a perfect day for an adventure. But where should they hop off to first?</p>
         <button onclick="makeChoice('flowerMeadow')">Hop to the flower meadow</button>
         <button onclick="makeChoice('pond')">Visit the shimmering pond</button>
         <button onclick="makeChoice('cave')">Explore the mossy cave</button>
