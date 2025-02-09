@@ -1,5 +1,5 @@
 // Array for blank card
-const blankArray = Array(12).fill('blank.jpg');
+const blankArray = Array(12).fill('blank.png');
 
 // Array for cards
 const actualImages = ['HW5/imgs/dancingBear1.png', 'HW5/imgs/dancingBear2.png', 'HW5/imgs/dancingCat1.png', 'HW5/imgs/dancingCat2.png', 
