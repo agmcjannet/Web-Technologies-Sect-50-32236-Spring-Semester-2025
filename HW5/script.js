@@ -1,28 +1,33 @@
-// Array for blank card
-const blankArray = Array(12).fill('blank.png');
+// Back of Card Array
+const backArray = Array(12).fill('imgs/blank.png');
 
-// Array for cards
-const actualImages = ['HW5/imgs/dancingBear1.png', 'HW5/imgs/dancingBear2.png', 'HW5/imgs/dancingCat1.png', 'HW5/imgs/dancingCat2.png', 
-                        'HW5/imgs/dancingFox1.png', 'HW5/imgs/dancingFox2.png', 'HW5/imgs/dancingGator1.png', 'HW5/imgs/dancingGator2.png', 
-                        'HW5/imgs/dancingGiraffe1.png', 'HW5/imgs/dancingGiraffe2.png', 'HW5/imgs/dancingRaccoon1', 'HW5/imgs/dancingRaccoon2.png'];
+// Front of Card Array
+const frontCard = [
+    'imgs/dancingBear1.png', 'imgs/dancingBear2.png',
+    'imgs/dancingCat1.png', 'imgs/dancingCat2.png',
+    'imgs/dancingGator1.png', 'imgs/dancingGator2.png',
+    'imgs/dancingFox1.png', 'imgs/dancingFox2.png',
+    'imgs/dancingGiraffe1.png', 'imgs/dancingGiraffe2.png',
+    'imgs/dancingRaccoon1.png', 'imgs/dancingRaccoon2.png'
+];
 
-// Randomize the actual images array
-actualImages.sort(() => Math.random() - 0.5);
+// Randomize
+frontCard.sort(() => Math.random() - 0.5);
 
-// Select the container div
 const container = document.querySelector('.container');
 
-// Create and display the grid of blank images
+// Grid to Display Cards
 for (let i = 0; i < 12; i++) {
     let imgElement = document.createElement('img');
-    imgElement.src = blankArray[i];
-    imgElement.dataset.index = i; 
-    imgElement.addEventListener('click', revealImage); 
+    imgElement.src = backArray[i];
+    imgElement.dataset.index = i;
+    imgElement.addEventListener('click', revealCard);
+    imgElement.classList.add('grid-item');
     container.appendChild(imgElement);
 }
 
-// Function to reveal the actual image
-function revealImage(event) {
-    let index = event.target.dataset.index;
-    event.target.src = actualImages[index]; 
+// Reveal Front of Card
+function revealCard(event) {
+    let index = event.target.dataset.index; 
+    event.target.src = frontCard[index]; 
 }
