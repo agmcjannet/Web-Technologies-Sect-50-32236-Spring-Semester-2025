@@ -10,12 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
-<body>      
+<body class="intro-page">      
   <main>
     <div class="section title" id="Title">
       <h1>Groovy Critters Matching Game</h1>
       <p>Please input your information below to begin the game!</p>
-      <div class="container">
+      <form id="userForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required> 
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required> 
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required> 
+
+        <button type="submit">Start Game</button>
+      </form>
       </div>
     </div>
   </main>
