@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', serif;
+    font-weight: 700;
+    background-color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh; 
+    background: url('imgs/background.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px; 
+    box-sizing: border-box; 
+    flex-direction: column;
+}
+
+.section.title {
+    text-align: center;
+    color: #234a76;
+    width: 100%;
+}
+
+.section.title h1 {
+    font-family: 'Quicksand', serif;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 3px 3px 0 white;
+    font-size: 60px; 
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 128px);
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.grid-item {
+    width: 100px; 
+    height: 140px; 
+    aspect-ratio: 15 / 21;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+    object-fit: contain; 
+    border-radius: 5px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+.grid-item:hover {
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+
+p {
+    font-size: 1.5vw;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 1024px) {
+    .section.title h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        max-width: 90vw;
+    }
+
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .section.title h1 {
+        font-size: 40px;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 100px);
+        max-width: 95vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .section.title h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        max-width: 100vw;
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    p {
+        font-size: 5vw;
+    }
+}
