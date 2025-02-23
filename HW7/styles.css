@@ -38,6 +38,40 @@ main {
     text-shadow: 2px 2px 0 white;
 }
 
+.section.title h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    word-wrap: break-word; 
+    color: #ffaaab;
+    text-shadow: none;
+}
+
+.art-author {
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    line-height: 1;
+}
+
+.art-medium-year {
+    font-size: 14px;
+    color: white;
+}
+
+.art-description {
+    font-size: 12px;
+    line-height: 1.4;
+    color: white;
+    text-align: left;
+}
+
+.art-citation {
+    font-size: 8px;
+    color: whitesmoke;
+    text-align: left;
+}
+
 .container {
     background-color: black;
     padding: 40px;
