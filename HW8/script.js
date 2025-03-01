@@ -1,84 +1,80 @@
-$(function(){
-    $(function () {
-        // Arrays for images, quotes, and authors
-        let images = ["imgs/landscape1.jpg", "imgs/landscape2.jpg", "imgs/landscape3.jpg", "imgs/landscape4.jpg", 
-                        "imgs/landscape5.jpg", "imgs/landscape6.jpg", "imgs/landscape7.jpg", "imgs/landscape8.jpg",
-                        "imgs/landscape9.jpg", "imgs/landscape10.jpg"];
-        let quotes = [
-          "Art enables us to find ourselves and lose ourselves at the same time.",
-          "Creativity takes courage.",
-          "Every artist was first an amateur."
-        ];
-        let authors = ["Thomas Merton", "Henri Matisse", "Ralph Waldo Emerson"];
-      
-        let imageIndex = 0, quoteIndex = 0;
-      
-        // Start button event
-        $("#startBtn").click(function () {
-          $("#startScreen").fadeOut(500, function () {
-            $("#artContainer").fadeIn(500);
-            startAnimations();
-          });
+$(document).ready(function() {
+    const images = [
+        'https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?auto=compress&cs=tinysrgb&h=350',
+        'https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?cs=srgb&dl=dawn-landscape-nature-210186.jpg&fm=jpg',
+        'https://cdn.pixabay.com/photo/2017/03/26/12/13/countryside-2175353_960_720.jpg',
+        'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=350',
+        'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&h=350',
+        'https://cdn.photographylife.com/wp-content/uploads/2017/01/Simplified-composition-of-the-same-photo.jpg',
+        'https://farm5.staticflickr.com/4240/34943640193_c2a25d399e_z.jpg',
+        'https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg',
+        'https://www.globallandscapesforum.org/wp-content/uploads/2017/11/situgunung-flipped-1600.jpg',
+        'https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg',
+    ];
+
+    const quotes = [
+        "Try to be a rainbow in someone's cloud. — Maya Angelou",
+        "If you don't like the road you're walking, start paving another one. — Dolly Parton",
+        "All dreams are within reach. All you have to do is keep moving towards them. — Viola Davis",
+        "Your story is what you have, what you will always have. It is something to own. — Michelle Obama",
+        "Believe you can and you're halfway there. — Theodore Roosevelt",
+        "Never regret anything that made you smile. — Mark Twain",
+        "Just stay on track and never look back. — Dolly Parton, “Blue Smoke”",
+        "The best way out is always through. — Robert Frost",
+        "Turn your wounds into wisdom. — Oprah Winfrey"
+    ];
+
+    const shapes = ['square', 'circle', 'triangle'];
+    let currentIndex = 0;
+    let quoteIndex = 0;
+    let currentShape = 0;
+
+    $('#start-button').click(function() {
+        $(this).parent().fadeOut();
+        $('.image-container').show();
+        $('#quote-container').fadeIn();
+        fadeImages();
+        showQuote();
+        createShape();
+    });
+
+    function fadeImages() {
+        $('#fade-image').attr('src', images[currentIndex]).fadeIn(1000, function() {
+            const randomDuration = Math.floor(Math.random() * 3000) + 1000;
+            setTimeout(function() {
+                $('#fade-image').fadeOut(1000, function() {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    fadeImages();
+                });
+            }, randomDuration);
         });
-      
-        function startAnimations() {
-          updateImage();
-          updateText();
-          animateShapes();
-      
-          setInterval(updateImage, 3000);
-          setInterval(updateText, 4000);
-          setInterval(animateShapes, 5000);
-        }
-    
-        
-        function updateImage() {
-            $("body").fadeOut(500, function () {
-                $(this).css("background-image", `url(${images[imageIndex]})`).fadeIn(500);
-                imageIndex = (imageIndex + 1) % images.length;
-            });
-        }
-        
-        setInterval(updateImage, 5000);
-        
-      
-        function updateText() {
-            let positions = [
-                { top: "10px", left: "10px" }, 
-                { top: "10px", right: "10px" }, 
-                { bottom: "10px", left: "10px" }, 
-                { bottom: "10px", right: "10px" } 
-            ];
-        
-            let randomPos = positions[Math.floor(Math.random() * positions.length)];
-        
-            $("#quote, #author").fadeOut(500, function () {
-                $("#quote").text(quotes[quoteIndex]).css(randomPos).fadeIn(1500);
-                $("#author").text(authors[quoteIndex]).css(randomPos).fadeIn(1500);
-        
-                quoteIndex = (quoteIndex + 1) % quotes.length;
-            });
-        }
-        
-      
-        function animateShapes() {
-          let shape = $("<div class='star'></div>").appendTo("#shapesContainer");
-      
-          let size = Math.floor(Math.random() * 50) + 20;
-          let startX = Math.random() * ($(window).width() - size);
-          let startY = Math.random() * ($(window).height() - size);
-      
-          shape.css({
-            width: size + "px",
-            height: size + "px",
-            top: startY,
-            left: startX
-          });
-      
-          shape.animate({ top: "+=100", opacity: 0 }, 2000, function () {
-            $(this).remove();
-          });
-        }
-      });
-      
+    }
+
+    function showQuote() {
+        $('#quote').fadeOut(function() {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            $(this).text(quotes[quoteIndex]).css('font-size', Math.random() * 40 + 20 + 'px').fadeIn();
+        });
+        setTimeout(showQuote, 3000);
+    }
+
+    function createShape() {
+        $('#shape').css({
+            display: 'block',
+            backgroundColor: getColor(),
+            borderRadius: currentShape === 1 ? '50%' : '0',
+            clipPath: currentShape === 2 ? 'polygon(50% 0%, 0% 100%, 100% 100%)' : 'none'
+        }).animate({ left: Math.random() * $(window).width(), top: Math.random() * $(window).height() }, 1000, function() {
+            setTimeout(() => {
+                $(this).fadeOut(500, function() {
+                    currentShape = (currentShape + 1) % shapes.length;
+                    createShape();
+                });
+            }, 500);
+        });
+    }
+
+    function getColor() {
+        return '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
 });
