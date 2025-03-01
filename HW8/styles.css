@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Vujahday Script', cursive;
+    font-weight: 400;
+    background-color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh; 
+    background-color: #fff5d7;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+h1 {
+    font-family: 'Vujahday Script', cursive;
+    font-size: 40px;
+    margin: 0;
+    word-wrap: break-word;
+    text-shadow: 3px 3px 0 black;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 400; 
+    font-style: normal;
+    margin: 0;
+    word-wrap: break-word; 
+    color: #ffaaab;
+    text-shadow: none;
+}
+
+p {
+    font-size: 1.75vw;
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: white
+}
+
+button {
+    font-size: 2vw;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #ff5e6c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffaaab;
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+
+    p {
+        font-size: 3vw;
+    }
+
+    button {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 15vw;
+    }
+
+    p {
+        font-size: 5vw;
+    }
+
+    button {
+        font-size: 6vw;
+    }
+}
