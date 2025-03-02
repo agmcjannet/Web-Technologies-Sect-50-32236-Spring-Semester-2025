@@ -41,19 +41,28 @@ $(document).ready(function() {
     function fadeImages() {
         $('#fade-image').attr('src', images[currentIndex]).fadeIn(1000, function() {
             const randomDuration = Math.floor(Math.random() * 3000) + 1000;
+            const direction = Math.random() < 0.5 ? 'left' : 'right';
+            const moveDistance = direction === 'left' ? -100 : 100;
+
             setTimeout(function() {
                 $('#fade-image').fadeOut(1000, function() {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    fadeImages();
+                    $(this).css('transform', `translateX(${moveDistance}px)`).fadeIn(1000, function() {
+                        $(this).css('transform', 'translateX(0)');
+                        currentIndex = (currentIndex + 1) % images.length;
+                        fadeImages();
+                    });
                 });
             }, randomDuration);
         });
     }
 
+
     function showQuote() {
         $('#quote').fadeOut(function() {
             quoteIndex = (quoteIndex + 1) % quotes.length;
             $(this).text(quotes[quoteIndex]).css('font-size', Math.random() * 40 + 20 + 'px').fadeIn();
+            const randomVerticalMove = Math.random() < 0.5 ? -20 : 20;
+            $(this).css('transform', `translateY(${randomVerticalMove}px)`).animate({ top: '+=20' }, 1000).animate({ top: '-=20' }, 1000);
         });
         setTimeout(showQuote, 3000);
     }

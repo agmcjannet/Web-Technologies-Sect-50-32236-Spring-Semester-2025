@@ -35,12 +35,13 @@ img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    transition: all 0.5s ease;
 }
 
 #quote {
-    text-align: center;
     margin: 20px;
     transition: all 0.5s ease;
+    text-align: unset;
 }
 
 #shape {
