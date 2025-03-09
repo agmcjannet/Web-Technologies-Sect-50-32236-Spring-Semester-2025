@@ -1,0 +1,62 @@
+body {
+    font-family: "Fauna One", serif;
+    font-weight: 400;
+    background-color: #5e3434;
+    color: #f9efe3;
+}
+
+h1 {
+    font-family: "Cinzel", serif;
+    text-align: center;
+    color: #c1a057;
+    font-size:50px;
+}
+
+#prizes, #randomPrize {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #7c4c54;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.laureate {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #c1a057;
+    border-radius: 5px;
+    background-color: #7c4c54;
+}
+
+button {
+    display:block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-family: "Cinzel", serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #391e1e;
+    color: #c1a057;
+    font-size:20px;
+}
+
+button:hover {
+    background-color:#c1a057;
+    color: #391e1e;
+}
+
+.image-container {
+    margin-left: 20px;
+    display: none;
+    position: relative;
+}
+
+.image-container img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
