@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    const categoryImages = {
+        'chemistry': 'imgs/chemistryNobelPrize.png',
+        'economics': 'imgs/economicsNobelPrize.png',
+        'literature': 'imgs/literatureNobelPrize.png',
+        'medicine': 'imgs/medicineNobelPrize.png',
+        'peace': 'imgs/peaceNobelPrize.png',
+        'physics': 'imgs/physicsNobelPrize.png'
+    };
+
     $.fn.capitalizeFirstLetter = function() {
         return this.each(function() {
             let text = $(this).text();
@@ -12,15 +21,10 @@ $(document).ready(function() {
         $(hideSelector).fadeOut(1000);
     };
 
-    const categoryImages = {
-        'peace': 'imgs/peaceNobelPrize.png',
-        'literature': 'imgs/lituratureNobelPrize.png',
-        'chemistry': 'imgs/chemistryNobelPrize.png',
-        'medicine': 'imgs/medicineNobelPrize.png',
-        'economics': 'imgs/economicsNobelPrize.png'
-    };
+    $.fn.displayPrizes = function(prizes) {
+        let container = $(this);
+        container.empty();
 
-    function displayPrizes(prizes) {
         prizes.forEach(prize => {
             let category = prize.category.charAt(0).toUpperCase() + prize.category.slice(1);
             let prizeDiv = $('<div class="prize"></div>');
@@ -39,18 +43,18 @@ $(document).ready(function() {
                 prizeDiv.append(`<p>No laureates awarded for this category.</p>`);
             }
 
-            $('#prizes').append(prizeDiv);
+            container.append(prizeDiv);
         });
 
         $('.category').capitalizeFirstLetter();
-    }
+    };
 
     function fetchPrizes(url) {
         $.ajax({
             url: url,
             dataType: 'json',
             success: function(data) {
-                displayPrizes(data.prizes);
+                $('#prizes').displayPrizes(data.prizes);
             },
             error: function() {
                 $('#prizes').html('<p>Error loading data.</p>');
@@ -67,6 +71,8 @@ $(document).ready(function() {
             success: function(data) {
                 let randomPrize = data.prizes[Math.floor(Math.random() * data.prizes.length)];
                 let category = randomPrize.category.charAt(0).toUpperCase() + randomPrize.category.slice(1);
+                let categoryKey = randomPrize.category.toLowerCase();
+                
                 let randomPrizeDiv = `
                     <h2>${randomPrize.year} - <span class="category">${category}</span></h2>
                 `;
@@ -87,12 +93,8 @@ $(document).ready(function() {
                 $('#prizes').fadeOut(1000);
                 $('#backToListBtn').fadeIn(500);
 
-                let imageContainer = $('#randomPrize').find('.image-container');
-                let imageSrc = categoryImages[randomPrize.category.toLowerCase()];
-
-                if (imageSrc) {
-                    imageContainer.html(`<img src="${imageSrc}" alt="${category} image">`).fadeIn(1000);
-                }
+                let selectedImage = categoryImages[categoryKey] || 'imgs/defaultPrize.png';
+                $('#randomImage').attr('src', selectedImage).fadeIn(1000);
             }
         });
     });
@@ -102,5 +104,6 @@ $(document).ready(function() {
             $('#prizes').fadeIn(1000);
         });
         $(this).fadeOut(500);
+        $('#randomImage').fadeOut(1000);
     });
 });
