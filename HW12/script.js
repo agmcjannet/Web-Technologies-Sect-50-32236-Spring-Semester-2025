@@ -9,23 +9,22 @@ let objects = [];
 let collectibles = [];
 
 // Load objects and collectibles from JSON files
-async function loadGameData() {
-    try {
-        const objectsResponse = await fetch('HW12/data/objects.json');
-        const collectiblesResponse = await fetch('HW12/data/collectibles.json');
-        
-        const objectsData = await objectsResponse.json();
-        const collectiblesData = await collectiblesResponse.json();
+function loadGameData() {
+    // Use $.getJSON() to load the objects and collectibles data
+    $.getJSON('data/objects.json', function(objectsData) {
+        $.getJSON('data/collectibles.json', function(collectiblesData) {
+            // Populate arrays with objects and collectibles from the data
+            objects = objectsData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
+            collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
 
-        // Populate arrays with objects and collectibles from the data
-        objects = objectsData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
-        collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
-
-        // Start the game loop after loading data
-        update();
-    } catch (error) {
-        console.error('Error loading game data:', error);
-    }
+            // Start the game loop after loading data
+            update();
+        }).fail(function() {
+            console.error('Error loading collectibles data.');
+        });
+    }).fail(function() {
+        console.error('Error loading objects data.');
+    });
 }
 
 // Collision detection function
