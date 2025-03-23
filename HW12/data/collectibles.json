@@ -1,5 +1,5 @@
 [
-    {"x": 300, "y": 300, "width": 20, "height": 20, "color": "#66c2a5"},
-    {"x": 500, "y": 200, "width": 20, "height": 20, "color": "#3288bd"},
-    {"x": 700, "y": 400, "width": 20, "height": 20, "color": "#5e4fa2"}
+    {"x": 300, "y": 300, "width": 20, "height": 20, "color": "#B39DDB"}, 
+    {"x": 500, "y": 200, "width": 20, "height": 20, "color": "#7B1FA2"}, 
+    {"x": 300, "y": 550, "width": 20, "height": 20, "color": "#4A148C"} 
 ]
