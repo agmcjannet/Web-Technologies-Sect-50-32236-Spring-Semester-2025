@@ -11,8 +11,8 @@ let collectibles = [];
 // Load objects and collectibles from JSON files
 async function loadGameData() {
     try {
-        const objectsResponse = await fetch('HW12/data/objects.json');
-        const collectiblesResponse = await fetch('HW12/data/collectibles.json');
+        const objectsResponse = await fetch('data/objects.json');
+        const collectiblesResponse = await fetch('data/collectibles.json');
         
         const objectsData = await objectsResponse.json();
         const collectiblesData = await collectiblesResponse.json();
