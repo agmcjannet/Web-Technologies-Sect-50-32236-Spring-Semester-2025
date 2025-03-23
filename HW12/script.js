@@ -1,23 +1,19 @@
-// Setup canvas and context
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let score = 0;
 
-// Create player
+
 const player = new Shape(100, 100, 30, 30, '#d53e4f');
 let objects = [];
 let collectibles = [];
 
-// Load objects and collectibles from JSON files
+
 function loadGameData() {
-    // Use $.getJSON() to load the objects and collectibles data
-    $.getJSON('data/objects.json', function(objectsData) {
-        $.getJSON('data/collectibles.json', function(collectiblesData) {
-            // Populate arrays with objects and collectibles from the data
+    $.getJSON('C:/Users/allison.mcjannet/OneDrive - The University of Montana/Documents/GitHub/Web-Technologies-Sect-50-32236-Spring-Semester-2025/HW12/data/objects.json', function(objectsData) {
+        $.getJSON('/C:/Users./allison.mcjannet/OneDrive - The University of Montana/Documents/GitHub/Web-Technologies-Sect-50-32236-Spring-Semester-2025/HW12/data/collectibles.json', function(collectiblesData) {
             objects = objectsData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
             collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
 
-            // Start the game loop after loading data
             update();
         }).fail(function() {
             console.error('Error loading collectibles data.');
@@ -27,7 +23,6 @@ function loadGameData() {
     });
 }
 
-// Collision detection function
 function hasCollided(object1, object2) {
     return !(
         ((object1.y + object1.height) < (object2.y)) ||
@@ -37,7 +32,6 @@ function hasCollided(object1, object2) {
     );
 }
 
-// Check if the player can move in the desired direction without colliding with objects
 function canMoveInDirection(dx, dy) {
     const futurePlayer = new Shape(player.x + dx, player.y + dy, player.width, player.height, player.color);
 
@@ -50,7 +44,6 @@ function canMoveInDirection(dx, dy) {
     return true;
 }
 
-// Update the game state
 function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -61,14 +54,13 @@ function update() {
         if (hasCollided(player, collectible)) {
             collectibles.splice(index, 1);
             score++;
-            $('#score').text(score); // Update the score on the screen
+            $('#score').text(score);
         }
     });
 
     requestAnimationFrame(update);
 }
 
-// Event listener for keydown (arrow keys for player movement)
 $(document).keydown(function(e) {
     switch (e.which) {
         case 37: // Left arrow
@@ -94,5 +86,4 @@ $(document).keydown(function(e) {
     }
 });
 
-// Start the game by loading data
 loadGameData();
