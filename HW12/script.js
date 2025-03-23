@@ -9,8 +9,8 @@ let collectibles = [];
 
 
 function loadGameData() {
-    $.getJSON('C:/Users/allison.mcjannet/OneDrive - The University of Montana/Documents/GitHub/Web-Technologies-Sect-50-32236-Spring-Semester-2025/HW12/data/objects.json', function(objectsData) {
-        $.getJSON('/C:/Users./allison.mcjannet/OneDrive - The University of Montana/Documents/GitHub/Web-Technologies-Sect-50-32236-Spring-Semester-2025/HW12/data/collectibles.json', function(collectiblesData) {
+    $.getJSON('http://127.0.0.1:5500/HW12/data/objects.json', function(objectsData) {
+        $.getJSON('http://127.0.0.1:5500/HW12/data/collectibles.json', function(collectiblesData) {
             objects = objectsData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
             collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
 
@@ -85,5 +85,6 @@ $(document).keydown(function(e) {
             break;
     }
 });
+
 
 loadGameData();
