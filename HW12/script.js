@@ -13,7 +13,7 @@ const objectsData = [
     {"x": 400, "y": 300, "width": 400, "height": 30, "color": "#388E3C"},
     {"x": 0, "y": 400, "width": 600, "height": 30, "color": "#2C6B2F"},
     {"x": 250, "y": 100, "width": 550, "height": 30, "color": "#6B8E23"},
-    {"x": 100, "y": 500, "width": 700, "height": 30, "color": "1B5E20"}
+    {"x": 100, "y": 500, "width": 700, "height": 30, "color": "#1B5E20"}
 ];
 
 const collectiblesData = [
@@ -28,12 +28,27 @@ collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width
 
 // Collision detection function
 function hasCollided(object1, object2) {
-    return !( 
+    return !(
         ((object1.y + object1.height) < (object2.y)) ||
         (object1.y > (object2.y + object2.height)) ||
         ((object1.x + object1.width) < object2.x) ||
         (object1.x > (object2.x + object2.width))
     );
+}
+
+// Check if the player can move in the desired direction without colliding with objects
+function canMoveInDirection(dx, dy) {
+    const futurePlayer = new Shape(player.x + dx, player.y + dy, player.width, player.height, player.color);
+
+    for (let i = 0; i < objects.length; i++) {
+        // Check for collision in the direction of movement
+        if (hasCollided(futurePlayer, objects[i])) {
+            // Block movement if there’s a collision in the direction of the move
+            return false;
+        }
+    }
+
+    return true; // No collision, can move
 }
 
 // Update the game state
@@ -47,7 +62,7 @@ function update() {
         if (hasCollided(player, collectible)) {
             collectibles.splice(index, 1);
             score++;
-            $('#score').text(score);  // Update the score on the screen
+            $('#score').text(score); // Update the score on the screen
         }
     });
 
@@ -57,17 +72,25 @@ function update() {
 // Event listener for keydown (arrow keys for player movement)
 $(document).keydown(function(e) {
     switch (e.which) {
-        case 37: // left arrow
-            player.x -= 5;
+        case 37: // Left arrow
+            if (canMoveInDirection(-5, 0)) {
+                player.x -= 5; // Move left
+            }
             break;
-        case 38: // up arrow
-            player.y -= 5;
+        case 38: // Up arrow
+            if (canMoveInDirection(0, -5)) {
+                player.y -= 5; // Move up
+            }
             break;
-        case 39: // right arrow
-            player.x += 5;
+        case 39: // Right arrow
+            if (canMoveInDirection(5, 0)) {
+                player.x += 5; // Move right
+            }
             break;
-        case 40: // down arrow
-            player.y += 5;
+        case 40: // Down arrow
+            if (canMoveInDirection(0, 5)) {
+                player.y += 5; // Move down
+            }
             break;
     }
 });
