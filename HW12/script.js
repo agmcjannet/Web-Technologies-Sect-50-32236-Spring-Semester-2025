@@ -9,8 +9,8 @@ let collectibles = [];
 
 
 function loadGameData() {
-    $.getJSON('http://127.0.0.1:5500/HW12/data/objects.json', function(objectsData) {
-        $.getJSON('http://127.0.0.1:5500/HW12/data/collectibles.json', function(collectiblesData) {
+    $.getJSON('data/objects.json', function(objectsData) {
+        $.getJSON('data/collectibles.json', function(collectiblesData) {
             objects = objectsData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
             collectibles = collectiblesData.map(data => new Shape(data.x, data.y, data.width, data.height, data.color));
 
