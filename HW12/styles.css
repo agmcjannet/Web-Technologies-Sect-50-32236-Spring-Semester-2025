@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#canvas {
+    border: 5px solid #333;
+    background-color: #fff;
+}
